@@ -776,6 +776,7 @@ key $SERVER_NAME.key
 auth none
 cipher none
 ncp-disable
+reneg-sec 0
 status /var/log/openvpn/status.log
 verb 3" >> /etc/openvpn/server.conf
 
@@ -919,7 +920,9 @@ auth-user-pass
 auth none
 auth-nocache
 cipher none
+reneg-sec 0
 setenv opt block-outside-dns
+setenv CLIENT_CERT 0
 verb 3" >> /etc/openvpn/client-template.txt
 
 if [[ $COMPRESSION_ENABLED == "y"  ]]; then
